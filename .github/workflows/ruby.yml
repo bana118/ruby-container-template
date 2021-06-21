@@ -21,7 +21,7 @@ jobs:
       with:
         ruby-version: 3.0.1
     - name: Install dependencies
-      run: | 
+      run: |
         gem install rubocop rubocop-performance rubocop-rails rubocop-packaging
         bundle install
     - name: Lint with rubocop
