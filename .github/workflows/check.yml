@@ -16,16 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.1
-      - name: Install dependencies
-        run: |
-          gem install rubocop rubocop-performance rubocop-rails rubocop-packaging
-          bundle install
-      - name: Lint with rubocop
-        run: rubocop
       # - name: Check git tag
       #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
       #   env:
@@ -36,3 +26,11 @@ jobs:
       #     root: ".version"
       #     tag_prefix: "v"
       #     dry_run: true
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+      - name: Install dependencies
+        run: |
+          gem install rubocop rubocop-performance rubocop-rails rubocop-packaging
+          bundle install
+      - name: Lint with rubocop
+        run: rubocop

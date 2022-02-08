@@ -1,4 +1,4 @@
-FROM ruby:3.0.1-slim-buster
+FROM ruby:slim
 
 RUN apt update \
     && apt install -y --no-install-recommends \
@@ -10,4 +10,4 @@ RUN apt update \
     && apt autoremove -y \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/* \
-    && gem install rubocop rubocop-performance rubocop-rails rubocop-packaging
+    && gem install rubocop solargraph rubocop-performance rubocop-rails rubocop-packaging
