@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ruby-version: "head"
       # - name: Check git tag
       #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
       #   env:
